@@ -773,7 +773,7 @@ pre {
   padding-right: 16px;
   border-right: 1px solid rgba(0,0,0,.1);
 }
-.cookie-message a.close {
+.cookie-message button.close {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   border: none;
@@ -783,11 +783,11 @@ pre {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
-  color: #919191;
+  background-color: var(--ui-color-n-500);
   transition: color 0.2s;
 }
-.cookie-message a.close:hover { color: #4385f5; }
-.cookie-message a {
+.cookie-message button.close:hover { color: #4385f5; }
+.cookie-message button {
   display: inline-block;
   color: #4385f5;
   text-decoration: none;
