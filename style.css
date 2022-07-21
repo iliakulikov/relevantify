@@ -773,7 +773,7 @@ pre {
   padding-right: 16px;
   border-right: 1px solid rgba(0,0,0,.1);
 }
-.cookie-message p.close {
+.cookie-message a.close {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   border: none;
@@ -786,8 +786,8 @@ pre {
   color: #919191;
   transition: color 0.2s;
 }
-.cookie-message p.close:hover { color: #4385f5; }
-.cookie-message p {
+.cookie-message a.close:hover { color: #4385f5; }
+.cookie-message a {
   display: inline-block;
   color: #4385f5;
   text-decoration: none;
