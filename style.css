@@ -757,7 +757,6 @@ pre {
   max-width: 540px;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
 }
 .cookie-message img {
   height: 50px;
@@ -785,6 +784,7 @@ pre {
   align-self: center;
   background-color: var(--ui-color-n-500);
   transition: color 0.2s;
+  cursor: pointer;
 }
 .cookie-message button.close:hover { color: #4385f5; }
 .cookie-message button {
