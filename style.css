@@ -747,8 +747,6 @@ pre {
   border-radius: 10px;
   padding: 15px 0;
   background: var(--ui-color-n-500);
-  border: 1px solid rgba(0,0,0,.15);
-  box-shadow: 0 0 16px 2px rgba(0,0,0,.05), 0 10px 10px 2px rgba(0,0,0,.05);
   font-size: 12px;
   line-height: 40px;
   position: fixed;
@@ -775,7 +773,7 @@ pre {
   padding-right: 16px;
   border-right: 1px solid rgba(0,0,0,.1);
 }
-.cookie-message a.close {
+.cookie-message p.close {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   border: none;
@@ -788,8 +786,8 @@ pre {
   color: #919191;
   transition: color 0.2s;
 }
-.cookie-message a.close:hover { color: #4385f5; }
-.cookie-message a {
+.cookie-message p.close:hover { color: #4385f5; }
+.cookie-message p {
   display: inline-block;
   color: #4385f5;
   text-decoration: none;
