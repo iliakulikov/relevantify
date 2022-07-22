@@ -40,10 +40,5 @@
     // cookies close button
 
     function cookieClose() {
-      var x = document.getElementById("cookie-message");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+      document.getElementById("cookie-message").style.display = "none";
     }
