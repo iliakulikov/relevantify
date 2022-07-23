@@ -611,6 +611,10 @@ summary::-webkit-details-marker {
   text-align: center;
 }
 
+.reco {
+  border-radius: 4px;
+}
+
 /*--------------------------------------------------------------
 |
 | 7.8 FOOTER
