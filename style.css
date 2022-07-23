@@ -418,7 +418,7 @@ input[type=text], input[type=email], input[type=submit], .button-input, select {
   padding-bottom: 5rem;
   padding-top: 8rem;
   text-align: center;
-  background-image: url('img/background_hero.webp');
+  background-image: linear-gradient(to bottom, transparent 50%, #000000bd 100%), url('img/background_hero.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
