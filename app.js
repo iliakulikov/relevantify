@@ -10,6 +10,7 @@
     }
     return(false);
   }
+
   window.onload = function getGclid() {
     var value = getQueryVariable("gclid");
     var e = document.getElementById("gclid");
@@ -27,18 +28,16 @@
         .catch(error => console.error('Error!', error.message))
     })
 
-    // hamburger animation
+  // hamburger animation
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
 
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-
-    // cookies close button
-
-    function cookieClose() {
-      document.getElementById("cookie-message").style.display = "none";
-    }
+  // cookies close button
+  function cookieClose() {
+    document.getElementById("cookie-message").style.display = "none";
+  }
