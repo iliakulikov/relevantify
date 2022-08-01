@@ -1,23 +1,33 @@
-  // gclid parsing from url
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("?");
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=");
-      if(pair[0] == variable) {
-        return pair[1];
-      }
-    }
-    return(false);
+// Parse the URL parameter
+  function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
 
+// Replace content dynamically using query string
+  var switchContent = document.getElementsByClassName("switch-content");
+  for (var i = 0; i < switchContent.length; i++) {
+
+      dynamicKey = switchContent[i].getAttribute('data-switch-key');
+
+      if (dynamicKey) dynamicContent = getParameterByName(dynamicKey);
+
+      if (dynamicContent) switchContent[i].textContent = dynamicContent;
+  }
+    
+// get GCLID
   window.onload = function getGclid() {
-    var value = getQueryVariable("gclid");
+    var value = getParameterByName("gclid");
     var e = document.getElementById("gclid");
     e.value = value;
   }
   
-  // post to spreadsheets
+// post to spreadsheets
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSQ8d_RAsYQH7WkQvisS5VXnKht2ocD-UFHaEDz71UbsLVcZFGKDDjmF0UjRrIS0F0/exec'
     const form = document.forms['submit-to-google-sheet']
   
@@ -28,7 +38,7 @@
         .catch(error => console.error('Error!', error.message))
     })
 
-  // hamburger animation
+// hamburger animation
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
   }
