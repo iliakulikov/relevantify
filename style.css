@@ -445,6 +445,7 @@ input[type=text], input[type=email], input[type=submit], .button-input, select {
 
 .headline-hero {
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
@@ -716,6 +717,7 @@ iframe {
 
 .ui-text-h1 {
   color: white;
+  text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------

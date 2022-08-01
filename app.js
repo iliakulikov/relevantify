@@ -19,7 +19,7 @@
 
       if (dynamicContent) switchContent[i].textContent = dynamicContent;
   }
-    
+
 // get GCLID
   window.onload = function getGclid() {
     var value = getParameterByName("gclid");
