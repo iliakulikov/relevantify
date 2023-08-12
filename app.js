@@ -38,6 +38,15 @@
         .catch(error => console.error('Error!', error.message))
     })
 
+// redirect to thankyou page
+document.getElementById('google-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission action
+
+    if (this.checkValidity()) {
+        window.location.href = 'https://relevantify.com/thankyou.html'; // Check if the form is valid before redirecting
+    } 
+});
+
 // hamburger animation
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
