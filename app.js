@@ -26,36 +26,20 @@
     var e = document.getElementById("gclid");
     e.value = value;
   }
-  
-// // post to spreadsheets
-//     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSQ8d_RAsYQH7WkQvisS5VXnKht2ocD-UFHaEDz71UbsLVcZFGKDDjmF0UjRrIS0F0/exec'
-//     const form = document.forms['submit-to-google-sheet']
-  
-//     form.addEventListener('submit', e => {
-//       e.preventDefault()
-//       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//         .then(response => console.log('Success!', response))
-//         .catch(error => console.error('Error!', error.message))
-//     })
-
-// // redirect to thankyou page
-// document.getElementById('google-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevent the default form submission action
-
-//     if (this.checkValidity()) {
-//         window.location.href = 'https://relevantify.com/thankyou.html'; // Check if the form is valid before redirecting
-//     } 
-// });
 
 // Post to spreadsheets and redirect on success
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwSQ8d_RAsYQH7WkQvisS5VXnKht2ocD-UFHaEDz71UbsLVcZFGKDDjmF0UjRrIS0F0/exec';
 const form = document.forms['submit-to-google-sheet'];
 
-form.addEventListener('submit', function(event) {
+document.forms['submit-to-google-sheet'].addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent the default form submission action
 
     // Check if the form is valid
     if (this.checkValidity()) {
+
+        // Show the spinner
+        document.getElementById('spinner').style.display = 'block';
+
         // Send data to the spreadsheet
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(response => {
@@ -63,6 +47,7 @@ form.addEventListener('submit', function(event) {
                 window.location.href = 'https://relevantify.com/thankyou.html';
             })
             .catch(error => {
+                document.getElementById('spinner').style.display = 'none';
                 console.error('Error!', error.message);
             });
     }

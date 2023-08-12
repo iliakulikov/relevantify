@@ -167,7 +167,12 @@
               <input type="email" name="email" placeholder="Email" required>
               <input type="hidden" name="cid" id="cid">
               <input type="hidden" name="gclid" id="gclid">
-              <input type="submit" class="ui-component-button-form">
+                <div class="button-container">
+                  <button type="submit" class="ui-component-button-form">
+                    Submit
+                    <div class="spinner" id="spinner" style="display: none;"></div>
+                </button>
+                </div>
           </form>
         </div>
       </section>

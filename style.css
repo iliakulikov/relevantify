@@ -315,7 +315,14 @@ svg {
 |
 --------------------------------------------------------------*/
 
-input[type=text], input[type=email], input[type=submit], .button-input, select {
+.button-container {
+  position: relative;
+  width: 100%;  
+  display: inline-block; 
+  vertical-align: middle; 
+}
+
+input[type=text], input[type=email], input[type=submit], .button-input, .ui-component-button-form, select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -328,6 +335,13 @@ input[type=text], input[type=email], input[type=submit], .button-input, select {
 .ui-component-button-form {
   cursor: pointer;
   background-color: #ccc;
+  width: 100%; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  position: relative; 
+  height: 46px;
+  line-height: 46px;
 }
 
 .ui-component-button-form:hover,
@@ -338,6 +352,25 @@ input[type=text], input[type=email], input[type=submit], .button-input, select {
 .ui-component-button-form:active,
 .ui-component-button-form--active {
   opacity: .6;
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 8px solid black;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin-left: 10px; 
+  position: absolute; /* Make the spinner absolute */
+  right: 10px; /* Position it 10px from the right edge of the button */
+  top: calc(50% - 12px);
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /*--------------------------------------------------------------
