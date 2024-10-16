@@ -28,7 +28,7 @@
   }
 
 // Post to spreadsheets and redirect on success
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwSQ8d_RAsYQH7WkQvisS5VXnKht2ocD-UFHaEDz71UbsLVcZFGKDDjmF0UjRrIS0F0/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx_141aM2ScfatbVVNIKuMaOFJqYnDo011RJGpwKUIs0l6BhMWX7W-MrhPDPx0a0gZr/exec';
 const form = document.forms['submit-to-google-sheet'];
 
 document.forms['submit-to-google-sheet'].addEventListener('submit', function(event) {
