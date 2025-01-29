@@ -489,6 +489,42 @@ input[type=text], input[type=email], input[type=submit], .button-input, .ui-comp
   text-transform: uppercase;
 }
 
+.ui-section-hero .ui-layout-grid {
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image {
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offer-box {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.1), rgba(25, 118, 210, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.offer-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.offer-box .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #1976d2;
+}
+
 /*--------------------------------------------------------------
 |
 | 7.3 CUSTOMER
@@ -1242,4 +1278,14 @@ pre {
     padding-top: 3rem;
   }
 
+}
+
+@media (max-width: 1024px) {
+  .ui-section-hero .ui-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    max-width: 300px;
+  }
 }
