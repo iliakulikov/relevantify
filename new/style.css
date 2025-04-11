@@ -722,7 +722,6 @@ footer {
 .footer-info {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 .footer-info p {
@@ -1110,6 +1109,6 @@ footer {
         line-height: 44px;
     }
     .hero-description {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
