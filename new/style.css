@@ -140,6 +140,7 @@ nav {
     max-width: 600px;
     padding-right: 20px; /* Add some space between content and image */
     flex-shrink: 0; /* Prevent content from shrinking */
+    z-index: 10;
 }
 
 .badge {
@@ -177,7 +178,6 @@ nav {
     font-size: 20px;
     line-height: 28px;
     font-weight: 300; /* Add regular font weight */
-    max-width: 500px;
 }
 
 .hero-buttons {
@@ -296,7 +296,7 @@ nav {
     margin-bottom: 16px;
     color: #fff;
     background-color: #3D4B6E;
-    padding: 16px 36px;
+    padding: 16px 16px;
     display: inline-block;
     border-radius: 24px;
 }
@@ -371,27 +371,10 @@ nav {
     max-width: 1400px; /* Increase from 1200px */
     margin: 0 auto;
 }
-
-/* Add this new media query for desktop layout */
-@media (min-width: 992px) {
-    .case-studies-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-    
-    /* Adjust card height for equal heights in grid */
-    .case-study {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    /* Make the mockup image maintain aspect ratio */
-    .laptop-mockup {
-        height: auto;
-        object-fit: contain;
-    }
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
 .case-study {
@@ -552,21 +535,6 @@ nav {
     font-size: 14px;
     font-weight: 500;
     color: #1A2A3A;
-}
-
-@media (max-width: 768px) {
-    .case-study {
-        padding: 25px;
-    }
-    
-    .case-url {
-        flex-direction: column;
-        gap: 4px;
-    }
-    
-    .case-description {
-        max-width: 100%;
-    }
 }
 
 /* Consultation Section */
@@ -808,88 +776,175 @@ footer {
     width: 30px;
 }
 
-/* Responsive Adjustments */
-
-
-@media (max-width: 1200px) {
-    nav, .hero .container, .strategy-cards, .case-studies-grid, .consultation-content, footer {
-        width: calc(100% - 200px); /* Keep 100px margins down to 1200px */
-        max-width: none; /* Remove max-width constraint */
-    }
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
 }
 
-@media (max-width: 992px) {
-    nav, .hero .container, .strategy-cards, .case-studies-grid, .consultation-content, footer {
-        width: calc(100% - 80px); /* 40px from left and right */
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2), .hamburger span:nth-child(3) {
+    top: 10px;
+}
+
+.hamburger span:nth-child(4) {
+    top: 20px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Queries */
+
+@media (max-width: 1110px) {
+
+
+    /* Remove max-height for hero section on mobile */
+    .hero {
+        max-height: none;
+        align-items: center; /* Reset alignment on mobile */
+        padding-bottom: 20px; /* Less bottom padding on mobile */
+        padding-top: 40px;
     }
-    
-    footer {
-        margin: 60px auto;
-        width: calc(100% - 80px);
-    }
-    
-    /* Keep your existing layout changes for 992px */
-    .hero h1 {
-        font-size: 40px;
-    }
-    
-    .hero-content {
-        max-width: 500px;
-    }
-    
+
     .hero-image {
-        width: 300px;
-        height: 300px;
+        position: relative;
+        width: 400px;
+        height: 400px;
+        flex-shrink: 0; 
+        margin-bottom: 0;
+        margin-top: 120px;
     }
-    
-    .ilia-image {
-        height: 300px;
+
+    .hero-description {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 30px;
     }
-    
+
+    .hero-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Reduced from 16px to fit smaller buttons */
+        height: 50px;
+        font-size: 14px; /* Slightly larger than 12px */
+    }
+
+    .hero-buttons .btn {
+        padding: 8px 16px; /* Adjusted padding for smaller screens */
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-buttons .btn:nth-child(1) {
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .hero-buttons .btn:nth-child(2) {
+        font-size: 14px;
+        height: 50px;
+    }
+
+    /* Make strategy cards stack vertically on mobile */
     .strategy-cards {
         flex-direction: column;
-        align-items: center;
+        gap: 30px;
     }
-    
-    .strategy-card {
-        max-width: 500px;
+
+    /* Make case studies stack vertically on mobile */
+    .case-studies-grid {
+        grid-template-columns: 1fr; /* Change from 2 columns to 1 */
+        gap: 30px; /* Reduce the gap slightly */
     }
-    
-    .case-study {
-        flex-direction: column;
-    }
-    
-    .case-image {
-        flex: initial;
-        height: 300px;
-    }
-    
+
+    /* Make consultation content stack vertically on mobile */
     .consultation-content {
         flex-direction: column;
-        padding: 0 40px; /* Make padding consistent */
+        gap: 30px;
     }
-    
-    .offer-box, .contact-form {
-        max-width: 100%;
-    }
-    
-    .hero {
-        padding-bottom: 30px; /* Slightly less bottom padding on medium screens */
-    }
-    
-    footer {
-        margin: 60px 40px;
-    }
-}
 
-@media (max-width: 768px) {
-    nav, .hero .container, .strategy-cards, .case-studies-grid, .consultation-content, footer {
-        width: calc(100% - 40px); /* 20px from left and right */
+    /* Make the mockup image maintain aspect ratio */
+    .laptop-mockup {
+        height: auto;
+        object-fit: contain;
     }
-    
+        
     footer {
         margin: 40px auto;
         width: calc(100% - 40px);
+    }
+
+    .case-study {
+        padding: 25px;
+    }
+    
+    .case-url {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .case-description {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 40px 20px;
+    }
+
+    .offer-box {
+        padding: 40px 20px;
     }
     
     /* Keep your existing mobile layout changes */
@@ -897,11 +952,7 @@ footer {
         top: 20px;
     }
     
-    nav {
-        padding: 0 20px;
-    }
-    
-    nav, .hero .container {
+    .hero .container {
         padding: 0 20px;
     }
     
@@ -955,5 +1006,110 @@ footer {
     
     footer {
         margin: 40px 20px;
+    }
+
+    /* Hamburger menu styling for mobile */
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(23, 37, 82, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        padding: 60px 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+        z-index: 100;
+    }
+    
+    #menu-toggle:checked ~ .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
+    }
+    
+    .nav-link {
+        font-size: 24px;
+        padding: 15px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    #menu-toggle:checked ~ .nav-links .nav-link {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+    }
+    
+    #menu-toggle:checked ~ .nav-links .nav-link:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+    
+    #menu-toggle:checked ~ .nav-links .nav-link:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+    
+    #menu-toggle:checked ~ .nav-links .nav-link:nth-child(4) {
+        transition-delay: 0.5s;
+    }
+
+    footer {
+        margin: 60px auto;
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .footer-info {
+        max-width: 300px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, minmax(120px, auto));
+        gap: 30px 40px;
+    }
+    
+    .footer-links .column h4 {
+        margin-bottom: 12px;
+    }
+    
+    .footer-bottom {
+        padding-top: 20px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .social-links {
+        gap: 20px;
+    }
+    
+    .social-link img {
+        width: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+    .hero-description {
+        font-size: 14px;
     }
 }
