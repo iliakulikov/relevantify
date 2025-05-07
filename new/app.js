@@ -24,6 +24,23 @@ window.onload = function getGclid() {
     if (e) e.value = value; // Add null check
 }
 
+// Mobile menu functionality - close menu when links are clicked
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links including the consultation button in nav
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const menuToggle = document.getElementById('menu-toggle');
+    
+    // Add click event listener to each navigation link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // If menu is open (checkbox is checked), close it
+            if (menuToggle && menuToggle.checked) {
+                menuToggle.checked = false;
+            }
+        });
+    });
+});
+
 // Improved form submission with spinner handling
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.forms['submit-to-google-sheet'];

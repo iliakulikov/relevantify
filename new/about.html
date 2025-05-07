@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Relevantify | Google Ads Expert</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: url('img/blurry-gradient.jpg') no-repeat center center;
+            background-size: cover;
+            background-color: #172552;
+            color: #fff;
+            min-height: min(70vh, 600px);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-top: 135px;
+            padding-bottom: 60px;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-hero .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+        
+        .about-hero .hero-description {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 90%;
+        }
+        
+        /* Section Styling Improvements */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #fff;
+            background-color: #3D4B6E;
+            padding: 16px 32px;
+            display: inline-block;
+            border-radius: 24px;
+            margin-top: 36px;
+        }
+        
+        /* Timeline Styling - Perfect alignment */
+        .timeline {
+            position: relative;
+            margin: 60px 0;
+            padding-top: 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 5px; /* Start at the same height as first dot */
+            bottom: 5px; /* End at the same height as last dot */
+            left: 22px;
+            width: 4px;
+            background: #f0f0f0;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 24px; /* Same as the line */
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #FFC72C;
+            transform: translateX(-50%); /* Centers the dot on the line */
+            z-index: 2;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 4px white; /* White border for cleaner look */
+        }
+        
+        .timeline-content {
+            background: #fff;
+            border-radius: 24px;
+            padding: 35px;
+            border: #AEAEAE 1px solid;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-company {
+            font-weight: 600;
+            font-size: 22px;
+            color: #1A2A3A;
+        }
+        
+        .timeline-role {
+            font-size: 17px;
+            font-weight: 500;
+            color: #3D4B6E;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-date {
+            font-size: 15px;
+            color: #777;
+        }
+        
+        .timeline-location {
+            font-size: 15px;
+            color: #777;
+            margin-top: 4px;
+        }
+        
+        .timeline-description {
+            margin-top: 16px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .timeline-description ul {
+            margin-top: 15px;
+        }
+        
+        .timeline-description li {
+            margin-bottom: 8px;
+        }
+        
+        .company-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            margin-left: 20px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            padding: 4px;
+        }
+        
+        .skills-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #AEAEAE;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .skill-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1A2A3A;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .skill-title:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: #FFC72C;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .skill-list li::before {
+            content: '•';
+            color: #FFC72C;
+            font-size: 24px;
+            margin-right: 12px;
+            line-height: 0;
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .process-list {
+            counter-reset: process-counter;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+        
+        .process-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-left: 60px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .process-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .process-item::before {
+            counter-increment: process-counter;
+            content: counter(process-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #FFC72C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+            color: #1A2A3A;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .process-content {
+            flex: 1;
+        }
+        
+        .process-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1A2A3A;
+        }
+        
+        .process-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .case-studies-compact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .case-compact {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid #AEAEAE;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .case-compact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .case-compact h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1A2A3A;
+        }
+        
+        .case-compact p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+        
+        .case-results {
+            font-weight: 500;
+            font-size: 15px;
+            color: #1A2A3A;
+            line-height: 1.6;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .consultation-button {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .consultation-button .btn {
+            padding: 14px 30px;
+            font-size: 17px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .consultation-button .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 1100px) {
+            .about-hero h1 {
+                font-size: 42px;
+                line-height: 1.2;
+            }
+            
+            .about-hero .hero-description {
+                font-size: 18px;
+                max-width: 100%;
+            }
+            
+            .case-studies-compact {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding-top: 100px;
+                min-height: auto;
+                text-align: center;
+            }
+            
+            .about-hero .hero-content {
+                max-width: 100%;
+            }
+            
+            .about-hero h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .about-hero .badge {
+                margin: 0 auto 20px;
+            }
+            
+            .about-hero .hero-description {
+                font-size: 16px;
+                margin: 0 auto;
+            }
+            
+            .strategy-header h2, 
+            .case-studies-header h2,
+            .consultation-header h2 {
+                font-size: 24px;
+                padding: 12px 20px;
+            }
+            
+            .timeline::before {
+                left: 14px; /* Adjust from 12px to 14px */
+                top: 5px;
+                bottom: 5px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+                margin-bottom: 40px;
+            }
+            
+            .timeline-dot {
+                left: 14px; /* Adjust from 10px to 14px */
+                width: 16px;
+                height: 16px;
+            }
+            
+            .timeline-content {
+                padding: 25px;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+            }
+            
+            .company-logo {
+                width: 40px;
+                height: 40px;
+                margin: 10px 0 0 0;
+                align-self: flex-start;
+            }
+            
+            .timeline-company {
+                font-size: 20px;
+            }
+            
+            .timeline-role {
+                font-size: 16px;
+            }
+            
+            .case-studies-compact {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            .skill-category {
+                min-width: 100%;
+            }
+            
+            .process-item {
+                padding-left: 45px;
+            }
+            
+            .process-item::before {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+            
+            .case-compact {
+                padding: 20px;
+            }
+            
+            .consultation-button {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 28px;
+            }
+            
+            .timeline-content {
+                padding: 20px 15px;
+            }
+            
+            .timeline-company {
+                font-size: 18px;
+            }
+            
+            .timeline-description {
+                font-size: 14px;
+            }
+            
+            .timeline-description ul {
+                padding-left: 15px;
+            }
+            
+            .process-item {
+                padding-left: 40px;
+                margin-bottom: 30px;
+            }
+            
+            .process-content h3 {
+                font-size: 17px;
+            }
+            
+            .process-content p {
+                font-size: 14px;
+            }
+            
+            .case-compact h3 {
+                font-size: 16px;
+            }
+            
+            .case-compact p,
+            .case-results {
+                font-size: 14px;
+            }
+        }
+
+        /* Adjust responsive styles */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 14px;
+            }
+            
+            .timeline-dot {
+                left: 16px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Relevantify">
+                </a>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="nav-links">
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#consultation" class="btn btn-primary">Free consultation</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    <img src="img/gads_badge.png" alt="Google Ads Expert">
+                    <span>Online Ads Expert</span>
+                </div>
+                
+                <h1>Ex-Googler with a decade of digital marketing expertise</h1>
+                
+                <p class="hero-description">
+                    I create, execute, and manage strategies for digital marketing teams to help small and midsize businesses accelerate their growth both locally and worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="experience-section">
+        <div class="container about-container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>Over 15 years of digital marketing and customer-focused experience</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Relevantify</div>
+                                <div class="timeline-role">Online Ads Expert</div>
+                                <div class="timeline-date">April 2020 - Present</div>
+                                <div class="timeline-location">Wicklow, Ireland</div>
+                            </div>
+                            <!-- <img src="img/logo-black.png" alt="Relevantify" class="company-logo"> -->
+                        </div>
+                        <div class="timeline-description">
+                            <p>As the founder and principal consultant at Relevantify, I turn growth goals into measurable wins for small-to-mid-size businesses worldwide. Drawing on 15+ years of performance-marketing expertise (and six years in Google's large-customer sales org), I design and run full-funnel programs that deliver profit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Google</div>
+                                <div class="timeline-role">Online Sales Account Manager</div>
+                                <div class="timeline-date">September 2014 - April 2020</div>
+                                <div class="timeline-location">Dublin, Ireland</div>
+                            </div>
+                            <!-- <img src="img/gads_badge.png" alt="Google" class="company-logo"> -->
+                        </div>
+                        <div class="timeline-description">
+                            <p>At Google Ireland I held a Key Account Manager position, helping grow the business through Google Ads for large customers in Central Eastern Europe.</p>
+                            <ul>
+                                <li>- Set quarterly online marketing strategies for clients using a wide range of Google advertising solutions (Search, Display, Branding, and Apps)</li>
+                                <li>- Prepared and held regular QBR meetings with clients to analyze campaign efficiency against KPIs, identify growth potential, and pitch Beta products</li>
+                                <li>- Managed seven large Finance clients with ~$15M annual advertising budgets</li>
+                                <li>- Our team consistently overachieved quarterly revenue targets (20%+ YoY)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Freelance</div>
+                                <div class="timeline-role">Digital Marketing Consultant</div>
+                                <div class="timeline-date">August 2013 - July 2014</div>
+                            </div>
+                        </div>
+                        <div class="timeline-description">
+                            <p>Started a freelance business, partnered and worked day-to-day with a client portfolio of 5 companies. I focused on bringing return on ad spend by optimizing PPC accounts (restructuring campaigns, keyword segmentation, and measurement).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Yandex</div>
+                                <div class="timeline-role">Support Specialist</div>
+                                <div class="timeline-date">March 2011 - July 2013</div>
+                            </div>
+                        </div>
+                        <div class="timeline-description">
+                            <p>Provided SMB customers support by phone and email, covering Ads services (Yandex.Direct, Yandex.Market, Yandex.Metrika).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Hewlett-Packard</div>
+                                <div class="timeline-role">Associate Partner Account Manager</div>
+                                <div class="timeline-date">May 2010 - January 2011</div>
+                            </div>
+                        </div>
+                        <div class="timeline-description">
+                            <p>Managed an SMB partners portfolio (B2B). Supported clients on sales, trade marketing, and refunds. Helped new on-boarding companies to obtain HP Preferred Partner status.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-company">Hewlett-Packard</div>
+                                <div class="timeline-role">Regional Retail Product Trainer</div>
+                                <div class="timeline-date">September 2008 - May 2010</div>
+                            </div>
+                        </div>
+                        <div class="timeline-description">
+                            <p>Led HP retail product trainings for sales managers in various regions of the country.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container about-container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <p>Comprehensive digital marketing skills tailored to drive business growth</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-title">Online Ads</div>
+                    <ul class="skill-list">
+                        <li>Strategic account structure</li>
+                        <li>Targeted keyword research</li>
+                        <li>Compelling ad copy</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-title">Landing Pages</div>
+                    <ul class="skill-list">
+                        <li>Lightning-fast load times</li>
+                        <li>Clear value propositions</li>
+                        <li>Focused, distraction-free design</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-title">Measurement</div>
+                    <ul class="skill-list">
+                        <li>Accurate conversion tracking</li>
+                        <li>Smart bidding optimization</li>
+                        <li>Regular reporting with insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container about-container">
+            <div class="section-header">
+                <h2>My Work Process</h2>
+                <p>How I structure work with clients to drive results</p>
+            </div>
+            
+            <div class="process-list">
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Introductory Call</h3>
+                        <p>Understanding your business goals, target audience, and current marketing challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Campaign Plan Development</h3>
+                        <p>Creating a detailed spreadsheet with keywords, ad copy, targeting, bids and budget allocation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Landing Page Creation</h3>
+                        <p>Designing and developing high-converting landing pages specific to your campaign goals.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Lead Management Setup</h3>
+                        <p>Creating a new spreadsheet system for effectively managing and tracking incoming leads.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Analytics Configuration</h3>
+                        <p>Setting up GA4 goals through Google Tag Manager for comprehensive tracking.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Campaign Launch</h3>
+                        <p>Account creation and uploading of the carefully structured campaigns.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Reporting Dashboard</h3>
+                        <p>Creating a custom DataStudio dashboard for transparent performance monitoring.</p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-content">
+                        <h3>Ongoing Optimization</h3>
+                        <p>Continuous refinement, expansion, and A/B testing to improve campaign performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Case Studies -->
+    <section class="case-studies">
+        <div class="container about-container">
+            <div class="section-header">
+                <h2>Case Studies</h2>
+                <p>Client success stories from previous years</p>
+            </div>
+            
+            <div class="case-studies-compact">
+                <div class="case-compact">
+                    <h3>MultiPass (Latvia)</h3>
+                    <p>Business accounts and Virtual IBANs</p>
+                    <div class="case-results">
+                        0 → 275 registrations<br>
+                        $443/registration<br>
+                        Geo: UK, EU
+                    </div>
+                </div>
+                
+                <div class="case-compact">
+                    <h3>YouHodler (Montenegro)</h3>
+                    <p>Crypto Wallet App and trading platform</p>
+                    <div class="case-results">
+                        5 → 50 traders per month<br>
+                        $100 → $1000 spend per day<br>
+                        Geo: UK, EU, US
+                    </div>
+                </div>
+                
+                <div class="case-compact">
+                    <h3>Sunway Estates (Thailand)</h3>
+                    <p>Thailand luxury real estate agency</p>
+                    <div class="case-results">
+                        0 → 30 qualified leads<br>
+                        Geo: EU, US, UK, AU
+                    </div>
+                </div>
+                
+                <div class="case-compact">
+                    <h3>Greenaer (Ireland)</h3>
+                    <p>Ireland electric bike retail chain</p>
+                    <div class="case-results">
+                        0 → 1000 qualified leads per year<br>
+                        10% conversion to sale<br>
+                        CPS $87<br>
+                        Geo: IE
+                    </div>
+                </div>
+                
+                <div class="case-compact">
+                    <h3>Voiso (USA)</h3>
+                    <p>AI-First contact center software</p>
+                    <div class="case-results">
+                        0 → 10 qualified leads per month<br>
+                        CPL ~$1000<br>
+                        Geo: EU, US, CA, UK, AU, Asia
+                    </div>
+                </div>
+                
+                <div class="case-compact">
+                    <h3>TripleTen (Serbia)</h3>
+                    <p>IT Bootcamps in US, Latam and Brazil</p>
+                    <div class="case-results">
+                        300 → 800 leads per month<br>
+                        CPL $45 → $28<br>
+                        CR 3% → 5%<br>
+                        Geo: MX, BR
+                    </div>
+                </div>
+            </div>
+            
+            <div class="consultation-button">
+                <a href="index.html#consultation" class="btn btn-primary">Schedule a Free Consultation <span style="margin-left: 5px;">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>Relevantify Ltd, 712443</p>
+                    <p>Wicklow, Ireland</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="column">
+                        <a href="mailto:ilia@relevantify.com">Contact</a>
+                        <a href="about.html">About</a>
+                    </div>
+                    
+                    <div class="column">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="img/logo-black.png" alt="Relevantify">
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/iliakulikov/" class="social-link">
+                        <img src="img/linkedin_icon.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
