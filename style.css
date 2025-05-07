@@ -1258,3 +1258,34 @@ footer {
     0% { transform: translateY(-50%) rotate(0deg); }
     100% { transform: translateY(-50%) rotate(360deg); }
 }
+
+/* Single Case Study styling */
+.case-studies-grid.single-case {
+    display: block; /* Override grid completely */
+    grid-template-columns: none; /* Reset grid template */
+    max-width: 800px; /* Set a max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Ensure the case study itself is centered and sized appropriately */
+.case-studies-grid.single-case .case-study {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Single Case Study styling - override grid layout completely */
+.case-studies-grid.single-case {
+    display: flex !important; /* Use !important to override any other display setting */
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: unset !important; /* Force unset of the grid columns */
+    max-width: 100%; /* Allow full width of the container */
+    margin: 0 auto;
+}
+
+.case-studies-grid.single-case .case-study {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
