@@ -869,6 +869,119 @@ footer {
     visibility: visible;
 }
 
+/* Legal Pages (Privacy & Terms) */
+.page-header {
+    background: url('img/blurry-gradient.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #172552;
+    color: #fff;
+    padding: 160px 0 80px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.page-header .subtitle {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.legal-content {
+    padding: 60px 0;
+}
+
+.policy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.policy-content h2 {
+    font-size: 28px;
+    margin: 40px 0 20px;
+    color: #1A2A3A;
+}
+
+.policy-content h3 {
+    font-size: 22px;
+    margin: 30px 0 16px;
+    color: #1A2A3A;
+}
+
+.policy-content p {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.policy-content ul, 
+.policy-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.policy-content li {
+    margin-bottom: 10px;
+}
+
+.policy-content ul {
+    list-style-type: disc;
+}
+
+.policy-content ol {
+    list-style-type: decimal;
+}
+
+.policy-content strong {
+    font-weight: 600;
+}
+
+/* Cookie message styles if you need them */
+.cookie-message {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+}
+
+.cookie-message img {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.cookie-message span {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cookie-message a {
+    color: #1A7AE4;
+    text-decoration: underline;
+}
+
+.cookie-message .close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    color: #666;
+}
+
 /* Media Queries */
 
 @media (max-width: 1110px) {
