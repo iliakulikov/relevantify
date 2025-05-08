@@ -549,6 +549,20 @@ nav {
     color: #1A2A3A;
 }
 
+/* Quote link styling */
+.quote-link {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.quote-link .quote-text,
+.quote-link .quote-author,
+.quote-link .author-info {
+    color: inherit;
+}
+
 /* Consultation Section */
 .consultation {
     padding: 80px 0;
