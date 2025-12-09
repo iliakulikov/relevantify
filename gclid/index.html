@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Easy lead management. Link your website form to a Spreadsheet. Mark qualified leads to send as conversions, improve your Google Ads autobidding model, and achieve better ROI." />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="index, follow" />
+    <!-- SPEED -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- LINK -->
+    <link rel="canonical" href="https://spreadleads.com/" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" sizes="48x48" />
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" /> -->
+    <!-- PERFORMANCE -->
+    <link rel="stylesheet" href="styles_critical_min.css" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <link rel="preload" as="style" href="styles_critical_min.css" />
+    <link rel="preload" as="image" href="img/background_hero.webp" />
+    <link rel="preload" as="image" href="img/logo.png" />
+    <link
+      rel="stylesheet"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      />
+    </noscript>
+    <!-- TITLE -->
+    <title>SpreadLeads │ Demo</title>
+    <!-- OG -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="SpreadLeads" />
+    <meta property="og:url" content="https://spreadleads.com/" />
+    <meta property="og:title" content="Collect Website Leads in a Spreadsheet. Boost Your Google Ads Efficiency." />
+    <meta property="og:description" content="Easy lead management. Link your website form to a Spreadsheet. Mark qualified leads to send as conversions, improve your Google Ads autobidding model, and achieve better ROI." />
+    <meta property="og:image" content="img/demo.webp" />
+    <meta property="og:image:width" content="768" />
+    <meta property="og:image:height" content="486" />
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <!-- ARTICLE -->
+    <meta
+      property="article:published_time"
+      content="2023-09-9T08:00:54+00:00"
+    />
+    <meta property="article:modified_time" content />
+  </head>
+  <body>
+    <!-- PERFORMANCE -->
+    <link rel="stylesheet" href="styles.css">
+    <header role="banner" class="ui-section-header">
+      <div class="ui-layout-container">
+        <div class="ui-section-header__layout ui-layout-flex">
+          
+          <!-- LOGO -->
+          
+          <a href="/index.html" role="link">
+            <img width="208.8" height="39.2" src="img/logo.png" alt="logo"></img>
+          </a>
+
+          <!-- MENU -->
+
+          <div class="hamburger" onclick="openNav()";>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/index.html#form">Get in touch</a>
+            <a href="/demo.html?gclid=EAIaIQMB4hAQobChMI65">Demo</a>
+            <a href="https://www.linkedin.com/in/iliakulikov" target="_blank"><img width="25px" height="25px" src="img/reddit.png" loading="lazy" alt="linkedin"></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      
+
+        <section class="ui-section-hero hero-demo">
+            <div class="ui-layout-container">
+              <!-- COPYWRITING -->
+              <div class="ui-layout-column-6 ui-layout-column-center">
+    
+                <h1 class="headline-hero">Demo</h1>
+    
+                <p class="ui-text-intro">Make a form submission using the demo below and see it appearing in the google sheets on the right.</p>
+    
+              </div>
+            </div>
+          </section>
+    
+
+          <section class="ui-section-demo">
+            <div class="left">
+              <h2 class="split-form-text">Lead form</h2>
+              <p class="split-form-text">Please allow a few seconds and reload if needed</p>
+              <form name="submit-to-google-sheet">
+                  <input type="text" name="name"  placeholder="Name" value="Test" required>
+                  <input type="email" name="email" placeholder="Email" value="test@test.com" required>
+                  <input type="hidden" name="cid" id="cid">
+                  <input type="hidden" name="gclid" id="gclid">
+                  <div class="button-container">
+                    <button type="submit" class="ui-component-button-form">
+                      Submit
+                      <div class="spinner" id="spinner" style="display: none;"></div>
+                  </button>
+                  </div>
+                  <!-- <input type="submit" class="ui-component-button-form" onClick="window.setTimeout(function(){location.reload()},2000)"> -->
+              </form>
+            </div> 
+            <div class="right">
+              <div class="loader"></div><p class="loader-text"><i>Loading the spreadsheet...</i></p>
+              <iframe src="https://docs.google.com/spreadsheets/d/1gCu1ZDldZ31Onnu1jj40TpSJ6XZCV1oHSytJp6KPav0/htmlembed/sheet?gid=0"></iframe>
+            </div>
+          </section>
+          
+          <section class="ui-section-close">
+            <div class="ui-layout-container">
+                <h2 class="headline-centered">Want to implement this solution?</h2>
+                <p class="ui-text-intro"><a href="/#form">Get in touch</a> to implement a spreadsheet lead management for your business</p>
+            </div>
+          </section>
+
+      <!-- <div class="cookie-message" id="cookie-message">
+        <img src="img/cookie.png" alt="cookie" width="100" height="100">
+        <span>SpreadLeads.com uses cookies to improve user experience. <a href="https://spreadleads.com/privacy.html">Privacy policy</a>.</span>
+        <button class="close" onclick="cookieClose()">x</button>
+      </div> -->
+
+    </main>
+
+    <footer role="contentinfo" class="ui-section-footer">
+
+      <div class="ui-layout-container">
+        <div class="ui-section-footer__layout ui-layout-flex">
+          <a href="#" class="ui-section-footer--copyright">
+            <img width="159" height="29.3" src="img/logo.png" alt="logo"></img>
+          </a>
+          <nav role="navigation" class="ui-section-footer--nav ui-section-footer--menu ui-layout-flex">
+            <div class="navdiv">
+              <small>© Relevantify LTD, #712443, Dublin, Ireland</small>
+              <p>
+                <a href="https://spreadleads.com/terms.html"><small>Terms</small></a> &nbsp;
+                <a href="https://spreadleads.com/privacy.html"><small>Privacy</small></a> &nbsp;
+                <a href="mailto:ilia@relevantify.com"><small>Contact</small></a>
+               </p>
+            </div>
+          </nav>
+          <nav role="navigation" class="ui-section-footer--nav ui-section-footer--social ui-layout-flex">
+            <a href="https://www.linkedin.com/in/iliakulikov" role="link" aria-label="#">
+              <img width="25px" height="25px" src="img/reddit.png" loading="lazy" alt="linkedin">
+            </a>
+          </nav>
+        </div>
+      </div>
+
+    </footer>
+    <script src="app-demo.js"></script>
+
+  </body>
+</html>
