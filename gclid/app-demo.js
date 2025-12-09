@@ -34,12 +34,20 @@ function getParameterByName(name, url) {
         // Send data to the spreadsheet
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
-            // On success, redirect to demo page
-            window.location.href = "/demo.html?gclid=EAIaIQMB4hAQobChMI65";
+            // On success, hide spinner and reset form
+            document.getElementById("spinner").style.display = "none";
+            form.reset();
+            // Restore the gclid value after reset
+            var gclidValue = getParameterByName("gclid");
+            if (gclidValue) {
+              document.getElementById("gclid").value = gclidValue;
+            }
+            alert("Form submitted successfully! Check the spreadsheet on the right.");
           })
           .catch((error) => {
             document.getElementById("spinner").style.display = "none";
             console.error("Error!", error.message);
+            alert("Error submitting form. Please try again.");
           });
       }
     }
