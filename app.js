@@ -41,6 +41,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Cookie Consent Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptButton = document.getElementById('acceptCookies');
+    
+    // Check if user has already accepted cookies
+    if (!localStorage.getItem('cookieConsent')) {
+        // Show the banner after a brief delay for better UX
+        setTimeout(function() {
+            if (cookieConsent) {
+                cookieConsent.classList.remove('hidden');
+            }
+        }, 500);
+    } else {
+        // Hide the banner if already accepted
+        if (cookieConsent) {
+            cookieConsent.classList.add('hidden');
+        }
+    }
+    
+    // Handle accept button click
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function() {
+            // Store consent in localStorage
+            localStorage.setItem('cookieConsent', 'true');
+            
+            // Hide the banner with animation
+            if (cookieConsent) {
+                cookieConsent.classList.add('hidden');
+            }
+        });
+    }
+});
+
 // Improved form submission with spinner handling
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.forms['submit-to-google-sheet'];
