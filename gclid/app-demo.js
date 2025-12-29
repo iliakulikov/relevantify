@@ -9,6 +9,8 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
   
+  // PWA install prompt disabled by removing manifest references
+  
   // get GCLID
   window.onload = function getGclid() {
     var value = getParameterByName("gclid");

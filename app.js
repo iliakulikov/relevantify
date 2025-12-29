@@ -9,6 +9,8 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+// PWA install prompt disabled by removing manifest references
+
 // Replace content dynamically using query string
 var switchContent = document.getElementsByClassName("switch-content");
 for (var i = 0; i < switchContent.length; i++) {
