@@ -43,6 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Smooth scroll for in-page navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach(anchor => {
+        anchor.addEventListener('click', function(event) {
+            const targetId = this.getAttribute('href').slice(1);
+
+            // Scroll to top for plain '#' links
+            if (!targetId) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                event.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+});
+
 // Cookie Consent Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const cookieConsent = document.getElementById('cookieConsent');
